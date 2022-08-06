@@ -13,6 +13,7 @@ import io.github.cottonmc.cotton.gui.widget.data.HorizontalAlignment;
 import io.github.cottonmc.cotton.gui.widget.data.Insets;
 import io.github.cottonmc.cotton.gui.widget.data.VerticalAlignment;
 import io.github.cottonmc.cotton.gui.widget.icon.ItemIcon;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.text.Text;
@@ -75,9 +76,11 @@ public class CollectedSkinsGui extends LightweightGuiDescription {
         clearKnown.setOnClick(() -> {
             SkineratorClient.foundSkins = 0;
             SkineratorClient.knownSkins.clear();
+            MinecraftClient.getInstance().setScreen(new CottonClientScreen(new CollectedSkinsGui()));
         });
         clearIgnored.setOnClick(() -> {
             SkineratorClient.ignoredSkins.clear();
+            MinecraftClient.getInstance().setScreen(new CottonClientScreen(new CollectedSkinsGui()));
         });
         root.add(label, 0, 0, 7, 1);
         root.add(list, 0, 1, 15, 14);
