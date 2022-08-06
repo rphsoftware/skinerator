@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "skinerator",
+  "version": "${version}",
+  "name": "Skinerator",
+  "description": "The Skinerator allows you to steal minecraft skins used on player heads and in almost any other context.",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/skinerator/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "space.rph.skinerator.client.SkineratorClient"
+    ],
+    "main": [
+      "space.rph.skinerator.Skinerator"
+    ]
+  },
+  "mixins": [
+    "skinerator.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric": "*",
+    "minecraft": "1.19"
+  }
+}
